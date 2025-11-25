@@ -48,19 +48,23 @@ def main():
     return render_template("main.html")
 
 
-@app.route("/laptops")
-def laptops():
-    return render_template("laptops.html")
+@app.route("/camisetas")
+def camisetas():
+    return render_template("camisetas.html")
 
 
-@app.route("/phones")
-def phones():
-    return render_template("phones.html")
+@app.route("/shorts")
+def shorts():
+    return render_template("shorts.html")
+
+@app.route("/pilusos")
+def pilusos():
+    return render_template("pilusos.html")
 
 
-@app.route("/keyboards")
-def keyboards():
-    return render_template("keyboards.html")
+@app.route("/medias")
+def medias():
+    return render_template("medias.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -184,28 +188,6 @@ def comprar():
         traceback.print_exc()
         flash("Error al generar el checkout. Revisa la consola.", "danger")
         return redirect(url_for("main"))
-
-
-@app.route("/pago_exitoso")
-def pago_exitoso():
-    return render_template(
-        "resultado_pago.html", mensaje="Pago aprobado! Gracias por tu compra."
-    )
-
-
-@app.route("/pago_fallido")
-def pago_fallido():
-    return render_template(
-        "resultado_pago.html",
-        mensaje="El pago no fue completado. Intenta nuevamente.",
-    )
-
-
-@app.route("/pago_pendiente")
-def pago_pendiente():
-    return render_template(
-        "resultado_pago.html", mensaje="El pago está pendiente de confirmación."
-    )
 
 
 if __name__ == "__main__":

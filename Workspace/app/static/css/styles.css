@@ -1,0 +1,108 @@
+/* BODY */
+body {
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    font-family: "Poppins", sans-serif;
+    color: #0a0a0a;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, #80deea, #b2ebf2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand,
+.nav-link {
+    color: #0a0a0a !important;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #007c91 !important;
+}
+
+/* BOTONES */
+.btn-success {
+    background: linear-gradient(135deg, #26c6da, #00acc1) !important;
+    border: none;
+    color: #fff !important;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-success:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary.disabled {
+    background: #cfd8dc !important;
+    color: #607d8b !important;
+    cursor: not-allowed;
+}
+
+/* BOTÓN CERRAR SESIÓN */
+.logout-btn {
+    background: linear-gradient(135deg, #ff8a65, #ff7043);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.logout-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* CARDS */
+.card {
+    border: none;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    border-bottom: 5px solid #00acc1;
+    transition: transform 0.3s;
+}
+
+.card-img-top:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    color: #007c91;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.card-body {
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .card {
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 95% !important;
+    }
+}

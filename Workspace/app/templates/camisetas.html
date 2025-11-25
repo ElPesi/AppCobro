@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg" style="background: #26c6da;">
+<nav class="navbar navbar-expand-lg" style="background: #26c6da;">
   <div class="container-fluid">
     <a class="navbar-brand text-white fw-bold" href="{{ url_for('main') }}">AppCobro</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -29,36 +29,36 @@
   </div>
 </nav>
 
+
     <main>
-        <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-            <div class="card shadow" style="max-width: 400px; width: 100%;">
-                <div class="card-body">
-                    <h2 class="card-title text-center mb-4">Iniciar Sesión</h2>
-                    <form method="post">
-                        <div class="mb-3">
-                            <label for="usuario" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="mail" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                        <div class="d-flex gap-2">
-                            <button type="submit" class="btn btn-primary w-50">Entrar</button>
-                            <a href="{{ url_for('signup') }}" class="btn btn-outline-secondary w-50">Registrarse</a>
-                        </div>
-                    </form>
-                    {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                    <div class="alert alert-danger mt-3">
-                        {{ messages[0] }}
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="card shadow" style="max-width: 450px; width: 100%;">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Formulario de Compra</h2>
+                <form method="POST" action="/comprar">
+                    <div class="mb-3">
+                        <label for="inputProducto" class="form-label">Producto</label>
+                        <select id="inputProducto" class="form-select" name="producto" required>
+                            <option selected>Camisetas</option>
+                            <option value="CAMISETA UMBRO CLUB ATLETICO BELGRANO">CAMISETA UMBRO CLUB ATLETICO BELGRANO</option>
+                            <option value="CAMISETA UMBRO CLUB ATLETICO BELGRANO ALTERNATIVA">CAMISETA UMBRO CLUB ATLETICO BELGRANO ALTERNATIVA</option>
+                        </select>
                     </div>
-                    {% endif %}
-                    {% endwith %}
-                </div>
+
+                    <div class="mb-3">
+                        <label for="inputCantidad" class="form-label">Cantidad</label>
+                        <input type="number" class="form-control" id="inputCantidad" name="cantidad" min="1" required>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-success w-50">Comprar</button>
+                        <a href="{{ url_for('main') }}" class="btn btn-outline-secondary w-50">Cancelar</a>
+                    </div>
+                </form>
             </div>
         </div>
-    </main>
+    </div>
+</main>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
